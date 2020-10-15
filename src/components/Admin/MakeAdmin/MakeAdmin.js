@@ -3,7 +3,7 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import './MakeAdmin.css';
 
 const MakeAdmin = () => {
-    const [info, setInfo] = useState({});
+    const [info, setInfo] = useState([]);
     const handleBlur = e => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;

@@ -28,3 +28,9 @@
 .feedback .card:hover img{
     display: none;
 }
+
+
+/* .brand-info-image img:hover{
+    transform: rotate(360deg) scale(1.8);
+    opacity: 1.7;
+} */

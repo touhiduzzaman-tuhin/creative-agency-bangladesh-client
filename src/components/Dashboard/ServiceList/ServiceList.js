@@ -1,26 +1,24 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../../App';
+import React, { useEffect, useState } from 'react';
+import OrderDataTable from '../OrderDataTable/OrderDataTable';
+import Sidebar from '../Sidebar/Sidebar';
+
 
 const ServiceList = () => {
     const [service, setService] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    useEffect( () => {
-        fetch('https://salty-crag-40522.herokuapp.com/orderByEmail?email='+loggedInUser.email, {
-            method: 'GET',
-            headers: { 
-                'Content-Type': 'application/json',
-                authorization: `Bearer ${sessionStorage.getItem('token')}`
-            }
-        })
-        .then(response => response.json())
-        .then(data => setService(data))
+    useEffect(() => {
+        fetch('https://salty-crag-40522.herokuapp.com/orderList')
+            .then(res => res.json())
+            .then(data => setService(data))
     }, [])
+
     return (
-        <div>
-            {
-                
-            }
+        <div className="container-fluid row" >
+            <Sidebar></Sidebar>
+            <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <h5 className="text-brand">Service List</h5>
+                <OrderDataTable order={service}></OrderDataTable>
+            </div>
         </div>
     );
 };

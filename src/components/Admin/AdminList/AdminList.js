@@ -8,8 +8,8 @@ const AdminList = () => {
 
     useEffect(() => {
         fetch('https://salty-crag-40522.herokuapp.com/admins')
-            .then(res => res.json())
-            .then(data => setAdmin(data))
+        .then(res => res.json())
+        .then(data => setAdmin(data))
     }, [])
 
     return (

@@ -16,13 +16,14 @@ import ContactUs from './components/Home/ContactUs/ContactUs';
 import NotFound from './components/Home/NotFound/NotFound';
 import AdminList from './components/Admin/AdminList/AdminList';
 import AddFakeData from './components/Dashboard/AddFakeData/AddFakeData';
-import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import HireUs from './components/Home/HireUs/HireUs';
 import Slack from './components/Home/ImageLink/Slack/Slack';
 import Google from './components/Home/ImageLink/Google/Google';
 import Uber from './components/Home/ImageLink/Uber/Uber';
 import Netflix from './components/Home/ImageLink/Netflix/Netflix';
 import Airbnb from './components/Home/ImageLink/Airbnb/Airbnb';
+import ServiceList from './components/Dashboard/ServiceList/ServiceList';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 
 function App() {
@@ -38,9 +39,12 @@ function App() {
           <Router path="/login">
             <Login></Login>
           </Router>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <AddOrder></AddOrder>
             {/* <Dashboard></Dashboard> */}
+          </PrivateRoute>
+          <Route path="/serviceList">
+            <ServiceList></ServiceList>
           </Route>
           <Route path="/addOrder">
             <AddOrder></AddOrder>

@@ -17,15 +17,15 @@ const Dashboard = () => {
     //     setSelectedDate(date);
     // }
 
-    useEffect(() => {
-        fetch('https://salty-crag-40522.herokuapp.com/appointmentsByDate', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({email: loggedInUser.email })
-        })
-            .then(res => res.json())
-            .then(data => setSingleOrder(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('https://salty-crag-40522.herokuapp.com/appointmentsByDate', {
+    //         method: 'POST',
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify({email: loggedInUser.email })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => setSingleOrder(data))
+    // }, [])
 
     return (
         <section>

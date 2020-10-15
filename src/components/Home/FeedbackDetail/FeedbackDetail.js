@@ -1,13 +1,17 @@
 import React from 'react';
+import './FeedbackDetail.css';
 
 const FeedbackDetail = ({ feedback}) => {
     return (
-        <div className="card shadow-sm">
+        <div className="card shadow-sm card-component-style">
             <div style={{borderBottom: 'none'}} className="card-header d-flex  align-items-center">
                 <img className="mx-3" src={feedback.img} alt="" width="60"/>
                 <div>
                     <h6 className="text-primary">{feedback.name}</h6>
-                    <p className="m-0">{feedback.rank}</p>
+                    {
+                        feedback.rank ? <p className="m-0">{feedback.rank}</p> : <p className="m-0">CSO, I-BOOK</p>
+                        
+                    }
                 </div>
             </div>
             <div className="card-body">
