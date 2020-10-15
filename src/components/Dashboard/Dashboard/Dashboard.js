@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
+import AddOrder from '../AddOrder/AddOrder';
 import Sidebar from '../Sidebar/Sidebar';
 
 const containerStyle = {
@@ -10,21 +11,21 @@ const containerStyle = {
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     // const [selectedDate, setSelectedDate] = useState(new Date());
-    // const [appointments, setAppointments] = useState([]);
+    const [singleOrder, setSingleOrder] = useState([]);
 
     // const handleDateChange = date => {
     //     setSelectedDate(date);
     // }
 
-    // useEffect(() => {
-    //     fetch('https://salty-plateau-71286.herokuapp.com/appointmentsByDate', {
-    //         method: 'POST',
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => setAppointments(data))
-    // }, [selectedDate])
+    useEffect(() => {
+        fetch('https://salty-crag-40522.herokuapp.com/appointmentsByDate', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setSingleOrder(data))
+    }, [])
 
     return (
         <section>
@@ -33,7 +34,8 @@ const Dashboard = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-5 col-sm-12 col-12 d-flex justify-content-center">
-                    
+                    {/* <AddOrder singleOrder={singleOrder}></AddOrder> */}
+                    {/* <AddOrder></AddOrder> */}
                 </div>
             </div>
         </section>

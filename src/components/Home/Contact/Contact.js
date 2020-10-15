@@ -2,11 +2,11 @@ import React from 'react';
 import './Contact.css';
 const Contact = () => {
     return (
-       <section className="contact my-5 py-5">
+       <section className="container contact my-5 py-5">
            <div className="container d-flex">
                <div className="col-md-5 mx-auto">
                     <h3 style={{color: '#2D2D2D'}}>Let us Handle Your <br/> Project, Professionally</h3>
-                    <p>With Well Written Codes, We build amazing apps for all platforms. Mobile and Web app in General.</p>
+                    <p className='mt-3'>With Well Written Codes, We build amazing apps for all platforms. Mobile and Web app in General.</p>
                </div>
                <div className="col-md-5 mx-auto">
                    <form action="">

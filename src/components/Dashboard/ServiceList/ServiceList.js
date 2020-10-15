@@ -6,7 +6,7 @@ const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect( () => {
-        fetch('http://localhost:5000/orderByEmail?email='+loggedInUser.email, {
+        fetch('https://salty-crag-40522.herokuapp.com/orderByEmail?email='+loggedInUser.email, {
             method: 'GET',
             headers: { 
                 'Content-Type': 'application/json',

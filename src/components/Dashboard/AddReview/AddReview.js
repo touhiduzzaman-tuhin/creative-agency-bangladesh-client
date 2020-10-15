@@ -13,7 +13,7 @@ const AddReview = () => {
     const handleSubmit = () => {
         const newReview = { ...info};
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://salty-crag-40522.herokuapp.com/addReview', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newReview)
@@ -21,6 +21,7 @@ const AddReview = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            alert('Your review has been saved successfully')
         })
     }
 

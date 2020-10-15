@@ -12,7 +12,7 @@ const MakeAdmin = () => {
 
     const handleSubmit = () => {
         const newAdmin = { ...info }
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://salty-crag-40522.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newAdmin)
@@ -20,6 +20,7 @@ const MakeAdmin = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            alert('Admin successfully added');
         })
     }
 

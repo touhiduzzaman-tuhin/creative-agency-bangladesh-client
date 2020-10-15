@@ -15,9 +15,14 @@ import OurPortfolio from './components/Home/OurPortfolio/OurPortfolio';
 import ContactUs from './components/Home/ContactUs/ContactUs';
 import NotFound from './components/Home/NotFound/NotFound';
 import AdminList from './components/Admin/AdminList/AdminList';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddFakeData from './components/Dashboard/AddFakeData/AddFakeData';
-
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import HireUs from './components/Home/HireUs/HireUs';
+import Slack from './components/Home/ImageLink/Slack/Slack';
+import Google from './components/Home/ImageLink/Google/Google';
+import Uber from './components/Home/ImageLink/Uber/Uber';
+import Netflix from './components/Home/ImageLink/Netflix/Netflix';
+import Airbnb from './components/Home/ImageLink/Airbnb/Airbnb';
 export const UserContext = createContext();
 
 function App() {
@@ -33,9 +38,10 @@ function App() {
           <Router path="/login">
             <Login></Login>
           </Router>
-          <PrivateRoute path="/dashboard">
+          <Route path="/dashboard">
             <AddOrder></AddOrder>
-          </PrivateRoute>
+            {/* <Dashboard></Dashboard> */}
+          </Route>
           <Route path="/addOrder">
             <AddOrder></AddOrder>
           </Route>
@@ -65,6 +71,24 @@ function App() {
           </Route>
           <Route path="/adminList">
             <AdminList></AdminList>
+          </Route>
+          <Route path="/hireUs">
+            <HireUs></HireUs>
+          </Route>
+          <Route path="/slack">
+            <Slack></Slack>
+          </Route>
+          <Route path="/google">
+            <Google></Google>
+          </Route>
+          <Route path="/uber">
+            <Uber></Uber>
+          </Route>
+          <Route path="/netflix">
+            <Netflix></Netflix>
+          </Route>
+          <Route path="/airbnb">
+            <Airbnb></Airbnb>
           </Route>
           <Route exact path="/">
             <Home></Home>

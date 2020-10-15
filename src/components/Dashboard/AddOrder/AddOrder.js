@@ -29,7 +29,7 @@ const AddOrder = () => {
         formData.append('details', info.details);
         formData.append('price', info.price);
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://salty-crag-40522.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })

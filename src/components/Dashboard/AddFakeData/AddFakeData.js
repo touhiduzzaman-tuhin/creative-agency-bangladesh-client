@@ -4,7 +4,7 @@ const AddFakeData = () => {
     const handleAddProduct = () => {
         const fakeData = {};
         
-        fetch('http://localhost:5000/addService', {
+        fetch('https://salty-crag-40522.herokuapp.com/addService', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json'

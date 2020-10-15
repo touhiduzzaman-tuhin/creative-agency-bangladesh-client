@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsersCog, faSignOutAlt, faCartPlus, faHome, faCar, faComment, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { UserContext } from '../../../App';
+import logo from '../../../images/logos/logo.png';
 
 const AdminSidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -22,6 +23,9 @@ const AdminSidebar = () => {
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
+                <li>
+                    <img src={logo} alt="" height="40px"/>
+                </li>
                 <li>
                     <Link to="/admin" className="text-white">
                          <span>Admin</span>
